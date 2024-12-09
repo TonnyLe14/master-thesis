@@ -1,0 +1,7 @@
+Model,Steel family,r2_score
+common layer,CMn,0.6531436170740831
+common layer,IF,0.6276095055984132
+common layer,HSLA,0.7704669870489291
+common_no_model_output,CMn,0.5580835722483152
+common_no_model_output,IF,0.4813799427977866
+common_no_model_output,HSLA,0.748434378103607
