@@ -1,13 +1,7 @@
 Model,Steel family,r2_score
-regular,CMn,0.667506927329195
-regular,IF,0.622983083193003
-regular,HSLA,0.7821203928717371
-regular_no_model_output,CMn,0.5751770081463637
-regular_no_model_output,IF,0.4093819285782113
-regular_no_model_output,HSLA,0.7248866460855964
-enhanced,CMn,0.6208343499150821
-enhanced,IF,0.5840016352105795
-enhanced,HSLA,0.7466197193172455
-enhanced_no_model_output,CMn,0.4731633233514636
-enhanced_no_model_output,IF,0.3615846492866487
-enhanced_no_model_output,HSLA,0.6865564719632251
+XGBoost,CMn,0.6973037225993854
+XGBoost,IF,0.6515427743631641
+XGBoost,HSLA,0.7722402283151981
+XGB_no_model_output,CMn,0.6392694643292898
+XGB_no_model_output,IF,0.5326642716184327
+XGB_no_model_output,HSLA,0.755133304664301
