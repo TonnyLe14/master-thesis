@@ -70,8 +70,7 @@ def remove_outliers(df):
     upper_bound = Q3 + 1.5 * IQR
     return df[(df['r_value'] >= lower_bound) & (df['r_value'] <= upper_bound)]
 
-def process_steel_data(data_path, description_path, corr_rate, dvl, model_output=True):
-
+def process_steel_data(data_path, description_path, corr_rate, dvl, model_output=True, nan_threshold=10):
     # Read input data
     line_csv = data_path + f'2024-04-04_DVL{dvl}_test_data_for_refit.csv'
     dvl1 = pd.read_csv(line_csv, delimiter=',')
@@ -100,8 +99,15 @@ def process_steel_data(data_path, description_path, corr_rate, dvl, model_output
     # Handle missing values
     nan_cols = dvl1_selected.isna().sum().sort_values(ascending=False)
     nan_cols = nan_cols[nan_cols > 0]
-    cols_to_drop = nan_cols[nan_cols > 100].index.tolist()
+    nan_percentage = (nan_cols / len(dvl1_selected)) * 100
+
+    # Drop columns where NaN percentage is above the specified threshold
+    cols_to_drop = nan_percentage[nan_percentage > nan_threshold].index.tolist()
+
+    # Drop the identified columns
     dvl1_selected = dvl1_selected.drop(cols_to_drop, axis=1)
+
+    # Drop rows with remaining NaN values
     dvl1_selected.dropna(inplace=True)
 
     # Feature correlation
