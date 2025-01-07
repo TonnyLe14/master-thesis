@@ -1,0 +1,10 @@
+{
+    "best_params": "{'kernel': 1**2 * Matern(length_scale=1, nu=1.5) + WhiteKernel(noise_level=1)}",
+    "best_score": 0.18152320406943295,
+    "train_mse": 0.04237655424454535,
+    "val_mse": 0.06144122241679729,
+    "train_mae": 0.14831581641875113,
+    "val_mae": 0.18027520093887472,
+    "train_r2": 0.9577887598089896,
+    "val_r2": 0.9375493717170956
+}
